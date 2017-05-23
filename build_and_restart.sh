@@ -1,6 +1,6 @@
 #!/bin/bash -x
 #
-#
+# Note: Must be run via sudo
 
 
 

@@ -2,7 +2,7 @@
 #
 # Note: Must be run via sudo
 
-IMAGE=$USER/jup
+IMAGE=t32/jupyter
 
 # First, stop all running docker containers
 docker stop $(sudo docker ps -a -q)

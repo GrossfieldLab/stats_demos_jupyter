@@ -90,7 +90,16 @@ RUN MPLBACKEND=Agg $CONDA_DIR/envs/python2/bin/python -c "import matplotlib.pypl
 RUN mkdir -p $HOME/.ipython/profile_default/startup
 COPY mplimporthook.py $HOME/.ipython/profile_default/startup/
 
+
+COPY Notebooks $HOME/work
+RUN mkdir $HOME/.jupyter
+RUN mkdir $HOME/.jupyter/custom
+COPY custom.js $HOME/.jupyter/custom
+
+
 USER root
+RUN /bin/chown -R $NB_USER:users $HOME/.jupyter
+RUN /bin/chown -R $NB_USER:users $HOME/work
 
 # Install Python 2 kernel spec globally to avoid permission problems when NB_UID
 # switching at runtime and to allow the notebook server running out of the root
@@ -102,6 +111,3 @@ RUN pip install kernda --no-cache && \
     pip uninstall kernda -y
 
 USER $NB_USER
-
-COPY Notebooks $HOME/work
-COPY custom.js $HOME/.jupyter/custom/

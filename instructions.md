@@ -42,6 +42,13 @@ bash build_base.sh
 bash build_and_start.sh
 ```
 
+### Errata
+
+SELinux was initially blocking the local proxy, so I had to enable using:
+```
+setsebool -P httpd_can_network_connect 1
+```
+
 ## Updating or restarting the tmpnb server
 
 * git update the repo

@@ -19,7 +19,7 @@ ipaddress==1.0.22
 ipykernel==4.10.0
 ipython==5.3.0
 ipython-genutils==0.2.0
-ipywidgets==6.0.0
+ipywidgets==7.0.0
 Jinja2==2.10
 jsonschema==2.6.0
 jupyter-client==5.2.3

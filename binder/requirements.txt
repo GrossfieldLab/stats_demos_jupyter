@@ -12,7 +12,6 @@ dill
 entrypoints
 enum34
 funcsigs
-functools32
 futures
 h5py
 ipaddress
